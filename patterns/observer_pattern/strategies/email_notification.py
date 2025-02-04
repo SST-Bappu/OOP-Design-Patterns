@@ -9,5 +9,12 @@ class EmailNotification(NotificationStrategy):
         self.key = key
         self.url = url
     
-    def notify(self, recipient: str, news: str):
-        print(f"{news} successfully notified to {recipient} via email")
+    def notify(self, recipient: dict, news: str):
+        email = recipient.get('email', None)
+        if email:
+            print(f"{news} successfully notified to {email} via email")
+    
+    @staticmethod
+    def required_fields():
+        return ['email']
+    

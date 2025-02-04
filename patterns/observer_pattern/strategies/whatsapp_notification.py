@@ -9,5 +9,11 @@ class WhatsAppNotification(NotificationStrategy):
         self.key = key
         self.url = url
     
-    def notify(self, recipient: str, news: str):
-        print(f"{news} successfully notified to {recipient} via whatsapp")
+    def notify(self, recipient: dict, news: str):
+        phone = recipient.get('phone', None)
+        if phone:
+            print(f"{news} successfully notified to {phone} via whatsapp")
+    
+    @staticmethod
+    def required_fields():
+        return ["phone"]
