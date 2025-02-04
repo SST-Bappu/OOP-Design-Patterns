@@ -16,7 +16,9 @@ class NotificationManager(Observer):
         """ Dynamically remove a strategy"""
         self.strategies.remove(strategy)
     
-    def update(self, recipient: str, news: str):
+    def update(self, recipient: dict, news: str):
         """ Trigger each of the notification mediums one by one """
         for strategy in self.strategies:
-            strategy.notify(recipient, news)
+            required_fields = strategy.required_fields()
+            if all(field in recipient for field in required_fields):
+                strategy.notify(recipient, news)
