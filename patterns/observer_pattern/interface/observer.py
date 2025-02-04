@@ -5,5 +5,5 @@ class Observer(ABC):
     """ Abstract observer interface for news agency """
     
     @abstractmethod
-    def update(self, recipient: str, news: str):
+    def update(self, recipient: dict, news: str):
         pass
