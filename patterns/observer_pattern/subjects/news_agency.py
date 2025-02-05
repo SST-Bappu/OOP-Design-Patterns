@@ -1,4 +1,4 @@
-from patterns.observer_pattern.interface.observer import Observer
+from patterns.observer_pattern.interfaces.observer import Observer
 
 
 class NewsAgency:

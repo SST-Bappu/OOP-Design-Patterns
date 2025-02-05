@@ -1,5 +1,5 @@
-from patterns.observer_pattern.interface.notification_strategy import NotificationStrategy
-from patterns.observer_pattern.interface.observer import Observer
+from patterns.observer_pattern.interfaces.notification_strategy import NotificationStrategy
+from patterns.observer_pattern.interfaces.observer import Observer
 
 
 class NotificationManager(Observer):
